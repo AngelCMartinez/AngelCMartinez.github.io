@@ -1,0 +1,241 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manga Plus</title>
+
+        <link rel="stylesheet" href="styles.css">
+
+        <style>
+            body {
+                background-color: #212121;
+                color: white;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+            header {
+                background-color: #333;
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            header img {
+                height: 80px;
+            }
+            nav {
+                display: flex;
+                gap: 20px;
+            }
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+          
+            .content {
+                display: flex;
+                margin: 20px;
+            }
+            .content img {
+                width: 300px;
+                height: auto;
+            }
+            .details {
+                margin-left: 20px;
+            }
+            .details h1 {
+                margin-top: 0;
+            }
+            .details p {
+                margin: 10px 0;
+            }
+            .details .teen-badge {
+                background-color: #444;
+                padding: 5px 10px;
+                border-radius: 5px;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            .favorite-button {
+                background-color: #ffcc00;
+                color: black;
+                padding: 10px;
+                text-align: center;
+                border: none;
+                cursor: pointer;
+                display: inline-block;
+            }
+            .favorite-button img {
+                vertical-align: middle;
+                  height: 30px; /* Ajusta el tamaño de la imagen aquí */
+        width: auto;
+    }
+            }
+
+
+
+      
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        td {
+            padding: 10px;
+        }
+        img {
+            cursor: pointer;
+            width: 225px;
+            height: 225px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            height: auto;
+            max-width: 1000px;
+            max-height: 80%;
+        }
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        .close, .prev, .next {
+            position: absolute;
+            top: 50%;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            user-select: none;
+        }
+        .close {
+            top: 15px;
+            right: 35px;
+        }
+        .close:hover,
+        .close:focus,
+        .prev:hover,
+        .prev:focus,
+        .next:hover,
+        .next:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .prev {
+            left: 0;
+            margin-left: 15px;
+        }
+        .next {
+            right: 0;
+            margin-right: 15px;
+        }
+    
+        </style>
+
+
+    </head>
+    <body>
+        <header>
+            <div>
+               <a href="index.html"> <img src="img/Imagen1.png" alt="Manga Plus Logo"></a>
+            </div>
+            <nav>
+                <a href="index.html">Menu principal</a>
+                
+            </nav>
+           
+        </header>
+        <div class="content">
+            <img src="img/dead.jpg" alt="One Piece">
+            <div class="details">
+                <h1>Death Note</h1>
+                <h2>TSUGUMI OHBA / TAKESHI OBATA</h2>
+                <div class="teen-badge">Jovenes</div>
+                <div class="teen-badge">Suspenso</div>
+                <div class="teen-badge">Asesinato</div>
+
+                <h3>ARGUMENTO</h3>
+                <p>Light Yagami, aplicado estudiante modelo, se aburre soberanamente. Pero cuando encuentra un misterioso cuaderno, ante él se abren infinidad de posibilidades: con el poder de la vida o la muerte de sus semejantes en sus manos, ¿qué camino escogerá? ¿Ayudar o crear un mundo en el que él sea el señor supremo? ¡El manga que revolucionó el género shonen en una edición con diseño exclusivo para NORMA Editorial!</p>
+
+                
+                
+            </div>
+        </div>
+        <table border="1">
+    <tr>
+        <td><img src="dead/m1.jpg" alt="Pagina 1" onclick="openModal(0)"></td>
+        <td><img src="dead/m2.jpg" alt="Pagina 2" onclick="openModal(1)"></td>
+        <td><img src="dead/m3.jpg" alt="Pagina 3" onclick="openModal(2)"></td>
+    </tr><tr>
+        <td><img src="dead/m4.jpg" alt="Pagina 4" onclick="openModal(3)"></td>
+        <td><img src="dead/m5.jpg" alt="Pagina 5" onclick="openModal(4)"></td>
+        <td><img src="dead/m6.jpg" alt="Pagina 6" onclick="openModal(5)"></td>
+    </tr>
+</table>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script>
+let currentIndex = 0;
+const images = [
+    { src: "dead/m1.jpg", alt: "Pagina 1" },
+    { src: "dead/m2.jpg", alt: "Pagina 2" },
+    { src: "dead/m3.jpg", alt: "Pagina 3" },
+    { src: "dead/m4.jpg", alt: "Pagina 4" },
+    { src: "dead/m5.jpg", alt: "Pagina 5" },
+    { src: "dead/m6.jpg", alt: "Pagina 6" }
+];
+
+function openModal(index) {
+    currentIndex = index;
+    document.getElementById('myModal').style.display = "block";
+    updateModalContent();
+}
+
+function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+}
+
+function changeImage(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    updateModalContent();
+}
+
+function updateModalContent() {
+    document.getElementById('img01').src = images[currentIndex].src;
+    document.getElementById('caption').innerHTML = images[currentIndex].alt;
+}
+</script>
+
+</body>
+</html>

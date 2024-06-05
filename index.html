@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperManga</title>
+  <style>
+       /* Estilos para el pop-up */
+    .popup-container {
+        display: none;
+        position: fixed;
+        width: 400px; /* Tamaño personalizado para el video */
+        height: 300px; /* Tamaño personalizado para el video */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .popup-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .popup-content video {
+        width: 100%;
+        height: calc(100% - 40px); /* Ajustar altura del video para dejar espacio para la "X" */
+        border-radius: 10px 10px 0 0;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+      /* Estilos para el contenedor de cada anuncio */
+        .popup-container {
+            position: absolute;
+            display: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 5px;
+        }
+
+
+.image-hover {
+  transition: transform 0.3s ease-in-out;  /* Transición con menor duración */
+}
+
+.image-hover:hover {
+  transform: translateY(-10px);  /* La imagen sube más al pasar el cursor */
+}
+
+ 
+
+
+#borde2, #borde1 {
+  display: flex;
+}
+
+#borde1 .borde1 {
+  flex: 1;
+  padding: 10px;
+}
+
+#borde2 .borde2 {
+  flex: 2;
+  padding: 10px;
+}
+
+#borde1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+#borde1 {
+  order: 1;
+}
+
+#borde2 {
+  order: 2;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+#borde1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+#borde2 {
+  flex: 2;
+  padding-left: 20px;
+}
+
+#borde1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+  </style>
+</head>
+<body>
+  
+
+  <div class="navbar">
+    <img src="img/logo.jpg" alt="Logo" class="logo">
+    <div class="title">SuperManga</div>
+    <a href="#his">Historia</a>
+    <div class="dropdown">
+      <a href="#">Servicios</a>
+      <div class="dropdown-content">
+        <a href="#Descar">Descargar Manga</a>
+        <a href="#comentarios">Comentarios</a>
+        
+      </div>
+    </div>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <div class="content">
+    <aside id="borde1">
+      <div class="borde1" id="01">
+        En Super Manga, cada página es una puerta a nuevos mundos, aventuras emocionantes y personajes inolvidables. Ya sea que te apasione la acción, el romance, la fantasía o el misterio, encontrarás una selección cuidadosamente curada para satisfacer todos tus gustos. Nuestra plataforma no solo se dedica a ofrecer una amplia variedad de títulos, sino también a garantizar una experiencia de lectura fluida y agradable.
+      </div>
+    </aside>
+
+    <div class="main-content">
+
+
+     <marquee> <div class="title" style="font-family: 'Arial', sans-serif; font-size: 35px;">Mangas de la semana</div></marquee>
+
+
+      <table border="1" style="margin: 0 auto;">
+        <tr>
+          <td><a href="luffy.html"><img src="img/luffy.jpg" alt="Imagen 1" class="image-hover" width="225" height="225"></a></td>
+          <td><a href="sakamoto.html"><img src="img/sakamoto.jpg" alt="Imagen 2" class="image-hover" width="225" height="225"></a></td>
+          <td><a href="class.html"><img src="img/Assassination.jpg" alt="Imagen 3" class="image-hover" width="225" height="225"></a></td>
+        </tr>
+      </table>
+
+
+
+      <marquee> <a href="https://www.crunchyroll.com/">
+
+        <img src="banners/ban1.jpg" width="600" height="500"></a> 
+
+        <a href="https://my.ninemanga.com/">
+
+        <img src="banners/ban2.jpg" width="600" height="500"></a>
+
+        <a href="https://bato.to/">
+
+        <img src="banners/ban3.jpg" width="600" height="500"> </a>
+
+        <a href="https://www.webtoons.com/es/">
+
+        <img src="banners/ban4.jpg" width="600" height="500"> </a>
+
+        <a href="https://www.mangahere.cc/">
+
+        <img src="banners/ban5.jpg" width="600" height="500"> </a>
+      </marquee>
+
+
+
+    </div>
+
+
+    <aside id="borde2">
+      <div class="borde2" id="02">
+        ¡Bienvenido a Super Manga! En nuestra plataforma, te ofrecemos una experiencia única para disfrutar de tus mangas favoritos de manera fácil y accesible. Super Manga es tu destino ideal para explorar una amplia colección de mangas, desde los clásicos más queridos hasta las nuevas joyas del género. Nuestro objetivo es brindarte una interfaz intuitiva y amigable para que puedas sumergirte en el fascinante mundo de las historias ilustradas con comodidad y sin complicaciones. Únete a nosotros y descubre por qué Super Manga es el lugar preferido de los amantes del manga. ¡Comienza tu aventura hoy mismo!
+      </div>
+    </aside>
+  </div>
+
+<marquee> <div class="title" style="font-family: 'Arial', sans-serif; font-size: 35px;">!Descubre más mangas¡</div></marquee>
+
+  <table border="1">
+    <tr>
+      <td><a href="boku.html"><img src="img/hero.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="naruto.html"><img src="img/naruto.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="kimetsu.html"><img src="img/kimetsu.jpg" alt="manga" class="image-hover"></td></a>
+
+    </tr>
+    <tr>
+      <td><a href="dead.html"><img src="img/dead.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="boruto.html"><img src="img/boruto.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="spy.html"><img src="img/spy.jpg" alt="manga" class="image-hover"></td></a>
+
+    </tr>
+  </table>
+
+
+
+  <article>
+    <header>
+      <h1 id="his">El comienzo</h1>
+      <h1>Origen del manga</h1>
+      <time datetime="1814">Año: 1814</time>
+    </header>
+
+<div class="content">
+  <aside id="borde1">
+    <div class="borde1" id="01">
+      <a href="https://www.wipo.int/wipo_magazine/es/2011/05/article_0003.html"> <img src="img/historia.jpg" alt="manga" class="image-hover"></a>
+    </div>
+  </aside>
+  <aside id="borde2">
+    <div class="borde2" id="02">
+      Unos « dibujos irrisorios »…
+      El nacimiento del manga se sitúa en 1814. Fue en esta época cuando Hokusai Katsushika realizó sus series de croquis de escenas de vida diaria, unos "dibujos irrisorios": "manga" en japonés.
+      <br><br>
+      En 1902, Kitazawa Rakuten publicó el primer manga moderno con cuatro viñetas por página y textos mecanografiados. Más tarde, los editores japoneses se inspiraron en las publicaciones periódicas anglosajonas y sacaron, en los años 1920, revistas mensuales que ponían de relieve los mangas, destinados en un principio a los chicos (Shônen Club), a las chicas (Shôjo Club) y luego a los jóvenes adultos (Yônen Club). Pero la Segunda Guerra Mundial interrumpió la progresión del fenómeno manga...
+      <br><br>
+      En 1947, cuando la producción de mangas se empezaba a recuperar, Tezuka Osamu, un apasionado del dibujo y fan del cine hollywoodiense (en particular de los dibujos animados de Walt Disney), reinventa el género con la publicación de Shin Takarajima (La nueva isla del tesoro). Una nueva estética, un grafismo redondeado, movimiento y acción: ¡el éxito fue inmediato!
+      <br><br>
+      … ¡A la conquista del planeta!
+      Las décadas 1950 y 1960 son las del auge del manga en Japón. Antes mensual, la frecuencia de publicación de las revistas de recopilación de mangas se vuelven semanales. Toda una generación de mangakas se lanza al manga de aventuras inspirado en el de Tezuka. Dibujan y escriben a un ritmo frenético para satisfacer a un público cada vez más deseoso.
+      <br><br>
+      En la misma ápoca aparecen las primeras reediciones de series de mangar en formato de libro de bolsillo (11,5 x 18 cm).
+      <br><br>
+      Por último, estas series se adaptaron para televisión: son los "dibujos animados". Una vez más, Tezuka Osamu desempeña un papel clave en la modernización y la difusión del manga y funda su propia productora. Los japoneses ya pueden seguir las aventuras de su héroe Astro, el pequeño robot, en la pantalla. A partir de los años 80, la adaptación animada de los mangas está considerada como la consagración del mangaka.
+      <br><br>
+      Así, los personajes viajaron hasta Francia. Las cadenas de televisión se amparan de ellos. Goldorak, Albator, Candy o el Capitán Flam seducen a los niños, adolescentes y jóvenes adultos… quienes se van orientando progresivamente hacia el manga en papel, cuyo potencial ha sido olfateado por los grandes editores franceses de cómics. Algunos aficionados deciden incluso tomar la pluma: ¡ha nacido el manga francés! ¿Y por qué no tú?
+    </div>
+  </aside>
+</div>
+
+
+
+
+
+
+
+
+<header>
+      <marquee> <h1 id="Descar">Descargar Mangas</h1></marquee>
+    </header>
+    <section>
+      <marquee>  <table border="1">
+  <tr>
+
+      <td><a href="https://www.terabox.app/spanish/sharing/link?surl=B8DEQake_vVjE129oQBp4w"><img src="img/naruto.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="https://www.terabox.app/spanish/sharing/link?surl=mGTVCURucufTRsFLrg35Kg"><img src="img/dead.jpg" alt="manga" class="image-hover"></td></a>
+
+      <td><a href="https://www.terabox.app/spanish/sharing/link?surl=eLxn6rkflB1YDS5K9olThQ "><img src="img/spy.jpg" alt="manga" class="image-hover"></td></a>
+
+    </tr>
+  </table>
+    </section>
+  </article>
+</marquee>
+
+
+
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup de Anuncios</title>
+    <style>
+        /* Estilos para el contenedor de cada anuncio */
+        .popup-container {
+            position: absolute;
+            display: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 5px;
+        }
+        .popup-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup de Anuncios</title>
+    <style>
+        /* Estilos para el contenedor de cada anuncio */
+        .popup-container {
+            position: absolute;
+            display: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 5px;
+        }
+        .popup-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Contenedor de todos los popups -->
+    <div id="popupContainer"></div>
+
+    <script>
+        // Función para mostrar un pop-up con un video o imagen aleatoria
+        function showRandomPopup() {
+            var popupContainer = document.getElementById('popupContainer');
+            var randomX = Math.random() * (window.innerWidth - 400); // Ancho del pop-up
+            var randomY = Math.random() * (window.innerHeight - 400); // Alto del pop-up
+
+            // Crear un nuevo elemento div para el pop-up
+            var popupDiv = document.createElement('div');
+            popupDiv.className = 'popup-container';
+            popupDiv.style.left = randomX + 'px';
+            popupDiv.style.top = randomY + 'px';
+
+            // Determinar aleatoriamente si se muestra un video o una imagen
+            var isVideo = Math.random() < 0.5;
+
+            if (isVideo) {
+    var video = document.createElement('video');
+    video.controls = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.style.width = '100%';
+    video.style.height = '100%';
+    var source = document.createElement('source');
+    source.src = 'anuncios/v2.mp4'; // Ruta a tu primer video
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    popupDiv.appendChild(video);
+} else if (Math.random() < 0.5) {
+    var image = document.createElement('img');
+    image.src = 'anuncios/b1.jpg'; // Ruta a tu primera imagen
+    image.alt = 'Anuncio';
+    image.style.width = '100%';
+    image.style.height = '100%';
+    popupDiv.appendChild(image);
+} else {
+    var image = document.createElement('img');
+    image.src = 'anuncios/b2.jpg'; // Ruta a tu segunda imagen
+    image.alt = 'Anuncio';
+    image.style.width = '100%';
+    image.style.height = '100%';
+    popupDiv.appendChild(image);
+}
+
+            // Botón de cierre del pop-up
+            var closeButton = document.createElement('span');
+            closeButton.textContent = 'X';
+            closeButton.className = 'popup-close';
+            closeButton.onclick = function() {
+                popupDiv.remove(); // Eliminar el pop-up al hacer clic en X
+            };
+            popupDiv.appendChild(closeButton);
+
+            // Agregar el pop-up al contenedor principal
+            popupContainer.appendChild(popupDiv);
+
+            // Mostrar el pop-up
+            popupDiv.style.display = 'block';
+        }
+
+        // Mostrar un pop-up cada 5 segundos
+        setInterval(showRandomPopup, 10000);
+    </script>
+
+
+ <style>
+        #contact-table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Ajuste de altura para mover la tabla hacia arriba */
+            margin-top: -10vh; /* Margen superior para mover la tabla hacia arriba */
+        }
+        #contact-table {
+            width: 60%;
+            border-collapse: collapse;
+            background-color: #736363 ;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        #contact-table td {
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            margin-bottom: 16px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #785E5E;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+      </style>
+
+
+<header>
+      <h1 id="comentarios">Formulario de comentarios</h1>
+    </header>
+ <center><h1></h1></center>
+   <div id="contact-table-container">
+        <table id="contact-table">
+            <tr>
+                <td>
+                    <form class="contact-form" onsubmit="return enviarFormulario(event)">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        
+                        <button type="submit">Enviar</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); 
+            alert('Los datos han sido enviados con éxito.'); 
+            return true; 
+        }
+    </script>
+<footer>
+      <p id="contacto">Contacto: <a href="mailto:060LA21@upchmx">060LA21@upchmx</a></p>
+    </footer>
+</body>
+</html>
